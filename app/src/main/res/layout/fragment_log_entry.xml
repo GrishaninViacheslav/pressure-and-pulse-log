@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <TextView
+            android:id="@+id/log_date_title"
+            style="@style/InputTitleStyle"
+            android:text="@string/log_date_title"
+            app:layout_constraintHorizontal_bias="0"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/date_input_layout"
+            style="@style/TextInputLayoutStyle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:hint="@string/date_hint"
+            app:layout_constraintHorizontal_bias="0"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            app:layout_constraintLeft_toLeftOf="@id/systolic_pressure_input_layout"
+            app:layout_constraintRight_toLeftOf="@id/time_input_layout"
+            app:layout_constraintTop_toBottomOf="@id/log_date_title">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/date_input_edit_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
+                android:textColor="@color/major_text_color"
+                android:textSize="@dimen/major_value"
+                android:inputType="date"
+                tools:ignore="SpUsage"
+                tools:text="09.10.2022" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/time_input_layout"
+            style="@style/TextInputLayoutStyle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:hint="@string/time_hint"
+            app:layout_constraintLeft_toRightOf="@id/date_input_layout"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="@id/date_input_layout">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/time_input_edit_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
+                android:textColor="@color/major_text_color"
+                android:textSize="@dimen/major_value"
+                android:inputType="date"
+                tools:ignore="SpUsage"
+                tools:text="19:04" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <TextView
+            android:id="@+id/pressure_and_pulse_title"
+            style="@style/InputTitleStyle"
+            android:text="@string/pressure_and_pulse_title"
+            app:layout_constraintHorizontal_bias="0"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/time_input_layout" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/systolic_pressure_input_layout"
+            style="@style/TextInputLayoutStyle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:hint="@string/systolic_pressure_hint"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="@id/diastolic_pressure_input_layout"
+            app:layout_constraintTop_toBottomOf="@id/pressure_and_pulse_title">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/systolic_pressure_input_edit_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
+                android:imeOptions="actionNext"
+                android:inputType="numberDecimal"
+                android:textColor="@color/major_text_color"
+                android:textSize="@dimen/major_value"
+                tools:ignore="SpUsage"
+                tools:text="141" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/diastolic_pressure_input_layout"
+            style="@style/TextInputLayoutStyle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:hint="@string/diastolic_pressure_hint"
+            app:layout_constraintLeft_toRightOf="@id/systolic_pressure_input_layout"
+            app:layout_constraintRight_toLeftOf="@id/pulse_input_layout"
+            app:layout_constraintTop_toTopOf="@id/systolic_pressure_input_layout">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/diastolic_pressure_input_edit_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
+                android:imeOptions="actionNext"
+                android:inputType="numberDecimal"
+                android:textColor="@color/major_text_color"
+                android:textSize="@dimen/major_value"
+                tools:ignore="SpUsage"
+                tools:text="64" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/pulse_input_layout"
+            style="@style/TextInputLayoutStyle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:hint="@string/pulse_hint"
+            app:layout_constraintLeft_toRightOf="@id/diastolic_pressure_input_layout"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="@id/diastolic_pressure_input_layout">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/pulse_input_edit_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
+                android:imeOptions="actionDone"
+                android:inputType="numberDecimal"
+                android:textColor="@color/major_text_color"
+                android:textSize="@dimen/major_value"
+                tools:ignore="SpUsage"
+                tools:text="69" />
+        </com.google.android.material.textfield.TextInputLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/confirm_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_margin="@dimen/outer_margin"
+        android:backgroundTint="@color/active_button_color"
+        android:insetLeft="0dp"
+        android:insetTop="0dp"
+        android:insetRight="0dp"
+        android:insetBottom="0dp"
+        android:text="@string/confirm_log_entry"
+        android:textColor="@color/button_text_color"
+        android:textSize="@dimen/title_size"
+        android:visibility="visible" />
+
+    <ProgressBar
+        android:id="@+id/progress_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone" />
+</LinearLayout>
